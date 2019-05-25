@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const zoos = await db_zoos.find()
-        zoos > 0
+        zoos.length > 0
         ?   res.status(200).json(zoos)
         :   res.status(404).json({message: `No zoos found.`})
     }
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
         ?   res.status(200).json(zoo)
         :   res.status(404).json({message: `No zoo found.`})
     }
-    catch {
+    catch (err) {
         res.status(500).json(err)
     }
 })
@@ -52,3 +52,5 @@ router.put('/:id', async (req, res) => {
     }
 })
 //D
+
+module.exports = router

@@ -25,14 +25,6 @@ const add = async zoo => await db('zoos').insert(zoo)
 //update users set name=changes.name where id = id
 const update = async (id, changes) => await db('zoos').where({id}).update(changes)
 
-//testing
-const execute = async () => {
-    await update(2, {name: 'farts5'})
-    const zoos = await find()
-    console.log(zoos)
-}
-execute()
-
 module.exports = {
     find,
     findById,
