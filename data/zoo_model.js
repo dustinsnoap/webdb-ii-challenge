@@ -32,3 +32,10 @@ const execute = async () => {
     console.log(zoos)
 }
 execute()
+
+module.exports = {
+    find,
+    findById,
+    add,
+    update,
+}
