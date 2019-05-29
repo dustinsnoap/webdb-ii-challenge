@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const db_zoos = require('../data/zoo_model')
 
-//middlewarez
+//middleware
 
 //C
 router.post('/', async (req, res) => {
