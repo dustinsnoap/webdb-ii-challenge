@@ -1,12 +1,15 @@
-const express = require('express');
-const helmet = require('helmet');
+const express = require('express')
+const helmet = require('helmet')
+const cors = require('cors')
 
 const server = express();
+const zooRoutes = require('./routes/zoos')
 
-server.use(express.json());
-server.use(helmet());
+server.use(express.json())
+server.use(cors())
+server.use(helmet())
 
-// endpoints here
+server.use('/api/zoos', zooRoutes)
 
 const port = 3300;
 server.listen(port, function() {
